@@ -1,0 +1,19 @@
+body{
+    margin: 0px;
+}
+.box{
+    width: 20%;
+    height: 10%;
+    padding: 0px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px black;
+}
+img{
+    width: 100px;
+}
+.info{
+    display: table;
+    align-content: center;
+    width: 250px;
+}
