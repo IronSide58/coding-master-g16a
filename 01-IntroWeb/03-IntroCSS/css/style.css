@@ -1,0 +1,20 @@
+body{
+    background-color: darksalmon;
+}
+header{
+    background-color: paleturquoise;
+}
+.barra{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 26px;
+}
+section{
+    background-color: blanchedalmond;
+}
+div{
+    border: solid 5px;
+    border-top-color: gray;
+    border-right-color: black;
+    border-left-color: black;
+    border-block-color: gray;   
+}
