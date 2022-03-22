@@ -1,0 +1,10 @@
+header{
+    border-bottom: 5px solid transparent;
+}
+nav{
+    align-items: center;
+}
+nav img{
+    width: 24pt;
+    height: 24pt;
+}
