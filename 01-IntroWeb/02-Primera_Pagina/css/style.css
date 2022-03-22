@@ -4,19 +4,26 @@ body{
     font-family: 'Smooch Sans', sans-serif;
 }
 nav{
-    background-color: #E8AD66;
-    list-style-type: none;
-    height: 30;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+    background: fixed #7080FF;
+    padding: 10px;
+    border: 3px solid transparent;
+    border-radius: 5px;
+}
+nav a{
+    display: flexbox;
+    background: #f5d907;
+    padding: auto;
+    border: 3px solid transparent;
+    margin: 3px;
+    border-radius: 5px;
+    outline: 2px solid black;
+    color: black;
+    text-decoration: none;
 }
 h2{
     background-color: #7080FF;
 }
 #productos section{
-    display: flex;
     flex-direction: row;
     align-items: center;
 }
