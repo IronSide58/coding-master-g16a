@@ -1,0 +1,39 @@
+body{
+    /*background-image: transparent;*/
+    background: scroll #28349C;
+    padding: auto;
+}
+h1{
+    color: blanchedalmond;
+    text-align: center;
+    text-transform: uppercase
+}
+nav{
+    display: flex;
+    background-color: #181F5C;
+    border: 7px solid transparent;
+    border-radius: 7px;
+    margin: 5px;
+    box-sizing: border-box;
+}
+#barra{
+    display: flex;
+    align-items: center;
+    border: 3px solid transparent;
+}
+#barra a {
+    background-color: #3949DB;
+    color: aliceblue;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 10px;
+    outline: thin solid white;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+#img img{
+    width: 100px;
+    margin: 3px;
+    padding: 10px;
+}

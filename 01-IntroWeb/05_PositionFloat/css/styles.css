@@ -1,0 +1,61 @@
+body{
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+header, footer{
+    background-color: #311b92;
+    color: white;
+    height: 10vh;
+    width: 100%;
+}
+aside{
+    background-color: #9575cd;
+    float: left;
+    height: 80vh;
+    width: 15%;
+}
+main{
+    background-color: #d1c4e9;
+    float: right;
+    height: 80vh;
+    width: 85%;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+h1{
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0 0 5px;
+}
+aside a{
+    border: 1px solid black;
+    color: black;
+    display: block;
+    margin: 5px 0;
+    text-align: center;
+    text-decoration: none;
+}
+aside a:hover{
+    background-color: #7c4dff;
+    border-radius: 5px;
+}
+p{
+    display: inline-block;
+    font-size: 0.8rem;
+    margin: 0;
+    text-align: center;
+}
+footer i{
+    font-size: 0.8rem !important;
+}
+footer a{
+    color: white;
+}
+footer a:hover{
+    color: black;
+}
