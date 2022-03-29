@@ -1,0 +1,158 @@
+body {
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: linear-gradient(rgba(84,93,220,0.8), rgba(96,171,245,0.7)), url(../src/img/fondo.png);
+    background-size: cover;
+    height: 100vh;
+}
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+}
+header ul {
+    display: flex;
+}
+header ul li{
+    list-style: none;
+    margin-right: 15px;
+}
+a {
+    text-decoration: none;
+}
+.contenedor {
+    max-width: 1360px;
+    margin: auto;
+}
+#contenedor-titulo-flex {
+    display: flex;
+    justify-content: center;
+    margin: 18vh;
+    width: 100%;
+}
+h1 {
+    color: white;
+    font-size: 58px;
+    margin: 0;
+}
+.contenedor-titulo {
+    text-align: center;
+}
+p.logo {
+    color: white;
+}
+nav ul li a {
+    color: white;
+}
+/* Inicio */
+h2 {
+    font-size: 50px;
+    text-align: center;
+}
+#inicio {
+    width: 45%;
+}
+#inicio .contenedor-inicio {
+    display: flex;
+    justify-content: space-around;
+}
+/* Productos */
+#productos {
+    background: #cdcdcd;
+}
+#productos .contenedor-productos{
+    display: flex;
+    justify-content: space-around;
+}
+#productos .muestra{
+    width: 30%;
+    box-shadow: 2px 2px 14px #ccc;
+}
+#productos img {
+    width: 100%;
+}
+#productos .contenido {
+    background: white;
+    padding: 20px;
+}
+#productos h4 {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-bottom: 15px;
+}
+#productos p {
+    color: cornflowerblue;
+    font-size: 0.8rem;
+    line-height: 24px;
+}
+/* Footer */
+footer {
+    background: #2f2f2f;
+    margin-top: 40px;
+    padding: 40px;
+    text-align: center;
+}
+footer.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+footer.contenedor .redes a img {
+    width: 15px;
+}
+footer p {
+    color: white;
+    margin-top: 40px;
+}
+html {
+    scroll-behavior: smooth;
+}
+#inicio, #productos {
+    padding: 50px 0;
+}
+.menu-icon {
+    display: none;
+}
+/* Media query */
+@media (max-width: 700px){
+    .menu-icon {
+        display: block;
+        float: right;
+        height: 35px;
+        margin-top: 15px;
+        width: 40px;
+    }
+    header nav {
+        background: #5cb8ff;
+        display: none;
+        height: 260px;
+        left: 0;
+        position: absolute;
+        top: 83px;
+        width: 100%;
+    }
+    header nav ul {
+        flex-direction: column;
+    }
+    header nav ul li {
+        margin-bottom: 15px;
+    }
+    h1 {
+        font-size: 45px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    #inicio .contenedor-inicio {
+        flex-direction: column;
+    }
+    #inico img {
+        width: 100%;
+    }
+    h3 {
+        font-size: 40px;
+    }
+}
