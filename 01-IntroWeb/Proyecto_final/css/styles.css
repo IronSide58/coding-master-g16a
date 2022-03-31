@@ -127,6 +127,17 @@ main .contenedor .card-image .account {
 }
 
 /* Móviles en horizontal o tablets en vertical */
+@media (max-width: 950px) {
+    main .contenedor {
+        columns: 3;
+    }
+    header div div section a.texto {
+        border-radius: 18px;
+        font-size: 12px;
+        height: 20px;
+        padding: 5px 0 5px 0;
+    }
+}
 @media (max-width: 767px) { 
     main .contenedor {
         columns:2;
