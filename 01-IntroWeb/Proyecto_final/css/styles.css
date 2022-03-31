@@ -143,7 +143,7 @@ main .contenedor .card-image .account {
         columns:2;
     }
     header div div section a.texto {
-        border-radius: 18px;
+        border-radius: 12px;
         font-size: 12px;
         height: 20px;
         padding: 5px 0 5px 0;
