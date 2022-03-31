@@ -1,123 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     background-color: white;
-    font-size: 18px;
+    color: black;
+    font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
-    padding: 0;
 }
+/* Styles Header CSS*/
 header {
     align-items: center;
-    background-color: bisque;
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 10px;
-    height: 12vh;
-    /* justify-content: space-around; */
-    width: 100%;
-}
-header section.container_left, section.container_right {
-    align-items: inherit;
-    display: flex;
-    height: inherit;
-    justify-content: center;
-    margin: 10px;
-    width: 13%;
-}
-header section.container_left a{
-    /* width: 30%; */
-    flex-grow: 2;
-    text-align: center;
-}
-#a_logo {
-    flex-grow: 1;
-    /* width: 40%; */
-}
-header section.container_left a.texto{
     background-color: white;
-    color:  black;
-    font-weight: bold;
-    padding: 12px;
-    border-radius: 50px;
-    text-decoration: none;
-}
-header section.search {
-    align-items: center;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 0 3px 0 black;
     display: flex;
-    height: inherit;
-    flex-flow: row nowrap;
-    justify-content: center;
-    width: 70%;
-}
-/* header section.search span {
-    background-color: #ddd;
-    border: 2px solid #ddd;
-    border-radius: 30px 0 0 30px;
-    color: #333;
-    font-size: 16px;
-    height: 10%;
-    padding: 12px;
-}
-header section.search input{
-    background-color: #ddd;
-    border: 2px solid #ddd;
-    border-radius: 30px;
-    color: #333;
-    font-size: 16px;
-    padding: 12px;
-}*/
-/* Sin flex ni CSS grid
-body{
-    background-color: white;
-    font-size: 18px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-header{ 
-    padding: 0;
-    margin: 0;
-    box-shadow: 0 0 5px gray;
-    justify-content: center;
-    align-items: center;
+    height: 80px;
+    max-height: 80px;
     position: fixed;
-    padding: 20px;
     width: 100%;
 }
-nav img{
-    width: 24pt;
-    height: 24pt;
+header div.inc{
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    padding: 4px 16px 4px 16px;
 }
-a{
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 100%;
-    padding: 4px;
+header div.inc div.sec {
+    align-items: center;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    gap: 5px;
+    text-align: center;
+    width: 100%;
 }
-a.texto{
+header div div > section {
+    align-items: center;
     background-color: white;
-    color:  black;
-    font-weight: bold;
-    padding: 12px;
-    border-radius: 50px;
-    text-decoration: none;
+    box-sizing: border-box;
+    color: black;
+    display: flex;
+    height: 48px;
 }
-a:hover.texto{
+header div div section #img {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 48px;
+}
+header div div section a.texto{
     background-color: black;
+    border: 1px solid black;
+    border-radius: 24px;
     color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 11px 0 11px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 37%;
 }
-main{
-    height: 800px;
+    /* header div div section a:hover {
+        background-color: gray;
+        opacity: 0.3;
+    } */
+header div div .search{
+    background-color: rgb(199, 197, 197);
+    border-radius: 24px;
+    padding-left: 16px;
 }
-input{
-    background-color: #ddd;
-    border: 2px solid #ddd;
-    color: #333;
+header div div .search div {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 3%;
+}
+header div div .search input {
+    background-color: transparent;
+    border: 0;
     font-size: 16px;
-    min-width: 70%;
-    padding: 12px;
-    border-radius: 30px;
+    height: 100%;
+    width: 97%;
 }
-.izq{
-    display: inline-block;
-    
-} */
+header div div section.container_right > a {
+    align-items: center;
+    height: 100%;
+    width: 48px;
+}
+/* STYLES CSS MAIN */
+main {
+    box-sizing: border-box;
+    padding: 80px 2% 0 2%;
+    width: 100%;
+}
+main .contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+main .contenedor .box {
+    margin: auto;
+    width: 250px;
+}
+main .contenedor img.main {
+    border-radius: 16px;
+    height: 100%;
+    width: 100%;
+}
+main .contenedor .box .account {
+    display: flex;
+}
