@@ -45,7 +45,7 @@ header div div > section {
     display: flex;
     height: 48px;
 }
-header div div section #img {
+header div div section #notifications, #message, #profile-img, #img {
     align-items: center;
     display: flex;
     height: 100%;
@@ -80,7 +80,7 @@ header div div .search div {
     justify-content: center;
     width: 3%;
 }
-header div div .search input {
+header div div .search .finder {
     background-color: transparent;
     border: 0;
     font-size: 16px;
@@ -95,26 +95,22 @@ header div div section.container_right > a {
 /* STYLES CSS MAIN */
 main {
     box-sizing: border-box;
-    padding: 80px 2% 0 2%;
+    padding: 50px 2% 0 2%;
     width: 100%;
 }
 main .contenedor {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; */
-    margin: 1rem auto;
-    width:100%;
-    max-width:960px;
-    padding:0 20px 20px;
     box-sizing: border-box;
     column-count: 4;
-
-    /* Espacio entre columnas */
+    column-gap: 10px; 
+    max-width: 1080px;
+    margin: 1rem auto;
+    padding: 0 20px 20px;
+    height: auto;
+    width: 100%;
     -moz-column-gap: 20px;
     -webkit-column-gap: 20px;
-    column-gap: 20px; 
 }
-main .contenedor .box {
+main .contenedor .card-image {
     padding:1rem;
     box-sizing: border-box;
     margin: auto;
@@ -125,8 +121,9 @@ main .contenedor img.main {
     height: 100%;
     width: 100%;
 }
-main .contenedor .box .account {
+main .contenedor .card-image .account {
     display: flex;
+    padding: 0 4px 0 0;
 }
 
 /* Móviles en horizontal o tablets en vertical */
@@ -134,7 +131,12 @@ main .contenedor .box .account {
     main .contenedor {
         columns:2;
     }
-
+    header div div section a.texto {
+        border-radius: 18px;
+        font-size: 12px;
+        height: 20px;
+        padding: 5px 0 5px 0;
+    }
 }
 
 /* Móviles en vertical */
@@ -142,5 +144,8 @@ main .contenedor .box .account {
 @media (max-width: 480px) {
     main .contenedor {
         columns: 1;
+    }
+    header div div .search .finder {
+        width: 50px;
     }
 }
