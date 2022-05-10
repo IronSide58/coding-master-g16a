@@ -4,6 +4,7 @@
 //  3. Se requiere que el profesor indique cuantas notas digitara para cada alumno.
 //  4. Imprimir con Alert el promedio de cada estudiante.
 //  5. Imprimir con Alert el promedio general del grupo.
+//<------------------------------------- Declaración de variables ------------------------------------------->
 var cantidadAlumnos = Number(prompt('¿Cuántos alumnos va a registrar?'));
 var cantidadCalificaciones = Number(prompt('¿Cuántas calificaciones va a ingresar por alumno?'));
 var dataBase = [];
@@ -18,6 +19,7 @@ class Alumno {
     }
 }
 
+//<-------------------------------------- Lógica de programación -------------------------------------------->
 for(var i=0; i < cantidadAlumnos; i++) {
     var capturarNombre = prompt(`Ingresa el nombre del alumno ${i + 1}:`);
     crearAlumno(capturarNombre);
@@ -33,15 +35,27 @@ for(var i=0; i < cantidadAlumnos; i++) {
 
 var promedioGrupal = promedioGrupal = total/dataBase.length;
 
-console.log(dataBase);
-console.log(promedioGrupal);
+//<------------------------------------------- Mostrar datos ------------------------------------------------>
+document.write(`<br><h3>Datos de los Alumnos</h3><br>`)
+mostrarDatos();
+document.write(`El promedio general del grupo fue de: ${promedioGrupal}`);
 
-//funciones
-function crearAlumno (capturarNombre) {
-    var NewAlumno = new Alumno(capturarNombre);
-    AgregarObjeto (NewAlumno);
+//<---------------------------------------------- Funciones ------------------------------------------------->
+function crearAlumno (nombre) {
+    var NewAlumno = new Alumno(nombre);
+    AgregarAlumno (NewAlumno);
 }
 
-function AgregarObjeto (objeto){
-    dataBase.push(objeto);
+function AgregarAlumno (alumno){
+    dataBase.push(alumno);
+}
+
+function mostrarDatos() {
+    for(var i=0; i<dataBase.length; i++) {
+        document.write(`${dataBase[i].Nombre}<br> Calificaciones: <br>`);
+        for(var j=0; j<dataBase[i].Calificaciones.length; j++) {
+            document.write(`| ${dataBase[i].Calificaciones[j]} |`);
+        }
+        document.write(`<br>Su promedio fue de: ${dataBase[i].Promedio}<br>`);
+    }
 }
