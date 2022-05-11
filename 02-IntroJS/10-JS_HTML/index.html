@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS + HTML</title>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <section>
+            <label for="nombre">Nombres: </label>
+            <input type="text" id="name"><br>
+            <label for="apellido">Apellidos: </label>
+            <input type="text" id="apellido"><br>
+            <label for="address">Dirección: </label>
+            <input type="text" id="address"><br>
+            <label for="Telefono">Telefono: </label>
+            <input type="number" id="phone"><br>
+            <label for="age">Edad: </label>
+            <select name="age" id="age"><br>
+                <option value="18">18 años</option>
+                <option value="19">19 años</option>
+                <option value="20">20 años</option>
+                <option value="21">21 años</option>
+                <option value="22">22 años</option>
+                <option value="23">23 años</option>
+            </select><br>
+            <label for="date">Fecha de Nacimiento: </label>
+            <input type="date" name="date" id="date"><br>
+            <label for="genero">Genero:</label>
+            <input type="radio" name="genero" id="male" onclick="validarGenero(1)">Masculino
+            <input type="radio" name="genero" id="female" onclick="validarGenero(2)">Femenino
+            <input type="radio" id="other" onclick="validarGenero(3)">Otro
+            <input type="text" id="txt_other" style="display: none;"><br>
+            <input type="checkbox" name="accept" id="accept">
+            <label for="accept">Acepto terminos y condiciones</label><br>
+            <button onclick="registrar()">Registrar</button>
+        <section>
+            <table id="registro">
+                <tr>
+                    <th>Nombre (s)</th>
+                    <th>Apellidos</th>
+                    <th>Dirección</th>
+                    <th>Telefono</th>
+                    <th>Edad</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Genero</th>
+                    <th>Acepto</th>
+                </tr>
+            </table>
+        </section>
+    </section>
+</body>
+</html>
