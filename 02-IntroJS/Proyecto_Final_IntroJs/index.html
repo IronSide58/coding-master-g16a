@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cajero Automatico</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <section id="inicio" class="wrap">
+        <nav>
+            <h2>Bienvenido a Cajero Automatico en linea</h2>
+        </nav>
+        <section id="accounts">
+            <div class="tarjet">
+                <div class="imagen">
+                    <img src="./src/img/user.png" alt="user1" style="width: 250px;">
+                </div>
+                <div class="tag_name">
+                    <h3>Gabriel</h3>
+                </div>
+                <div class="btn_login">
+                    <button onclick="consultar(1)">Consultar información</button>
+                </div>
+            </div>
+            <div class="tarjet">
+                <article class="imagen">
+                    <img src="./src/img/user.png" alt="user2" style="width: 250px;">
+                </article>
+                <article class="tag_name">
+                    <h3>Samuel</h3>
+                </article>
+                <article class="btn_login">
+                    <button onclick="consultar(2)">Consultar información</button>
+                </article>
+            </div>
+            <div class="tarjet">
+                <article class="imagen">
+                    <img src="./src/img/user.png" alt="user3" style="width: 250px;">
+                </article>
+                <article class="tag_name">
+                    <h3>Abigail</h3>
+                </article>
+                <article class="btn_login">
+                    <button onclick="consultar(3)">Consultar información</button>
+                </article>
+            </div>
+        </section>
+    </section>
+    <section id="login" class="wrap" style="display: none;">
+        <nav>
+            <h2>Inicio de sesión</h2>
+        </nav>
+        <section id="accounts">
+            <div class="tarjet">
+                <article class="imagen">
+                    <img src="./src/img/user.png" alt="user1" style="width: 250px;">
+                </article>
+                <article class="tag_name" id="id_name">
+                    <!-- <h3>User</h3> -->
+                </article>
+                <article class="btn_login">
+                    <label for="password">Ingresar contraseña</label>
+                    <input type="password" name="password" id="password">
+                    <button onclick="login()" id="btn_login">Iniciar sesión</button>
+                </article>
+            </div>
+        </section>
+    </section>
+    <section id="menu" class="wrap" style="display: none;">
+        <nav class="nav_menu">
+            <h2>Bienvenido</h2>
+            <img src="" alt="logout">
+        </nav>
+        <section class="menu content">
+            <section class="text">
+                <h2>Menu principal</h2>
+                <p>Elige un opción:</p>
+            </section>
+            <section class="options">
+                <button class="btn_global_in" onclick="consultar_Saldo()">CONSULTAR SALDO</button>
+                <button class="btn_global_in" onclick="ingresa_Monto()">INGRESAR MONTO</button>
+                <button class="btn_global_in" onclick="menu_Retirar()">RETIRAR MONTO</button>
+            </section>
+        </section>
+    </section>
+    <section id="saldo" class="wrap" style="display: none;">
+        <nav>
+            <h2>Consulta Saldo</h2>
+        </nav>
+        <section class="content cons_saldo">
+            <section class= "cons_saldo" id="txt_saldo">
+                <h1>Bienvenido ${user_1.name}</h1><p>El saldo actual en su cuenta es de:</p><strong>$${user_1.saldo}</strong>
+            </section>
+            <section>
+                <button class="btn_global_in" onclick="volver()">Volver</button>
+            </section>
+        </section>
+    </section>
+    <section id="ingresar" class="wrap" style="display: none;">
+        <nav>
+            <h2>Ingresar Monto</h2>
+        </nav>
+        <section class="content ing_saldo">
+            <section id="txt_ing">
+
+            </section>
+            <section class="items_ing">
+                <label for="Ingresar cantidad">Ingresa la cantidad a depositar:</label>
+                <input type="number" name="ingreso" id="ingresar_monto">
+                <button onclick="ingresar_Monto()" class="btn_global_in btn_ing">Ingresar monto</button>
+            </section>
+        </section>
+    </section>
+    <section id="retirar" class="wrap" style="display: none;">
+        <nav>
+            <h2>Retirar Monto</h2>
+        </nav>
+        <section class="content ing_saldo">
+            <section id="txt_ret">
+
+            </section>
+            <section class="items_ing">
+                <label for="Ingresar cantidad">Ingresa la cantidad a retirar:</label>
+                <input type="number" name="ingreso" id="retirar_monto">
+                <button onclick="retirar_Monto()" class="btn_global_in btn_ing">Retirar monto</button>
+            </section>
+        </section>
+    </section>
+</body>
+</html>
