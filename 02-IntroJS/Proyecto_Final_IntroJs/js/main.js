@@ -4,6 +4,7 @@ let section_menu = document.getElementById('menu');
 let section_saldo = document.getElementById('saldo');
 let section_ingresar = document.getElementById('ingresar');
 let section_retirar = document.getElementById('retirar');
+let section_result = document.getElementById('result');
 let btn_login = document.getElementById('password');
 var ing_value = document.getElementById('ingresar_monto');
 var ret_value = document.getElementById('retirar_monto');
@@ -12,8 +13,7 @@ const id_name = document.querySelector('#id_name');
 const txt_saldo = document.querySelector('#txt_saldo');
 const txt_ing = document.querySelector('#txt_ing');
 const txt_ret = document.querySelector('#txt_ret');
-const result_ing = document.querySelector('#result_ing');
-const result_ret = document.querySelector('#result_ret');
+const result_items= document.querySelector('#result_items');
 
 class persona {
     constructor (name, password, saldo){
@@ -120,19 +120,25 @@ function ingresa_Monto() {
 function ingresar_Monto() {
     if (flag === 1) {
         user_1.saldo = user_1.saldo + Number(ing_value.value);
-        items_ing.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
+        section_ingresar.style.display = 'none';
+        section_result.style.display = 'block';
+        result_items.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
         <label>Su nuevo saldo es de: $${user_1.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_ingresar()">Volver</button></section>`;
+        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
     } else if (flag === 2) {
         user_2.saldo = user_2.saldo + Number(ing_value.value);
-        items_ing.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
+        section_ingresar.style.display = 'none';
+        section_result.style.display = 'block';
+        result_items.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
         <label>Su nuevo saldo es de: $${user_2.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_ingresar()">Volver</button></section>`;
+        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
     } else if (flag === 3) {
         user_3.saldo = user_3.saldo + Number(ing_value.value);
-        items_ing.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
+        section_ingresar.style.display = 'none';
+        section_result.style.display = 'block';
+        result_items.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
         <label>Su nuevo saldo es de: $${user_3.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_ingresar()">Volver</button></section>`;
+        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
     }
 }
 
@@ -166,32 +172,34 @@ function menu_Retirar() {
 function retirar_Monto() {
     if (flag === 1) {
         user_1.saldo = user_1.saldo - Number(ret_value.value);
-        result_ret.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
+        section_retirar.style.display = 'none';
+        section_result.style.display = 'block';
+        result_items.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
         <label>Su nuevo saldo es de: $${user_1.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_retirar()">Volver</button></section>`;
+        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
     } else if (flag === 2) {
         user_2.saldo = user_2.saldo - Number(ret_value.value);
-        result_ret.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
+        section_retirar.style.display = 'none';
+        section_result.style.display = 'block';
+        result_items.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
         <label>Su nuevo saldo es de: $${user_2.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_retirar()">Volver</button></section>`;
+        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
     } else if (flag === 3) {
         user_3.saldo = user_3.saldo - Number(ret_value.value);
-        result_ret.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
+        section_retirar.style.display = 'none';
+        section_result.style.display = 'block';
+        result_items.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
         <label>Su nuevo saldo es de: $${user_3.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_retirar()">Volver</button></section>`;
+        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
     }
 }
 function volver() {
     section_menu.style.display = 'block';
     section_saldo.style.display = 'none';
 }
-function volver_ingresar() {
+function volver_menu() {
     section_menu.style.display = 'block';
-    section_ingresar.style.display = 'none';
-}
-function volver_retirar() {
-    section_menu.style.display = 'block';
-    section_retirar.style.display = 'none';
+    section_result.style.display = 'none';
 }
 function logout() {
     section_menu.style.display = 'none';

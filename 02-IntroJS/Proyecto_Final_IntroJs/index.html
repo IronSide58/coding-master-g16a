@@ -122,9 +122,6 @@
                 <input type="number" name="ingreso" id="ingresar_monto">
                 <button onclick="ingresar_Monto()" class="btn_global_in btn_ing">Ingresar monto</button>
             </section>
-            <section id="result_ing">
-
-            </section>
         </section>
     </section>
     <section id="retirar" class="wrap" style="display: none;">
@@ -140,9 +137,13 @@
                 <input type="number" name="ingreso" id="retirar_monto">
                 <button onclick="retirar_Monto()" class="btn_global_in btn_ing">Retirar monto</button>
             </section>
-            <section id="results_ret" class="items_ing">
-                
-            </section>
+        </section>
+    </section>
+    <section class="wrap" id="result" style="display: none;"> 
+        <nav>
+
+        </nav>
+        <section class="content ing_saldo items_ing" id="result_items">
         </section>
     </section>
 </body>
