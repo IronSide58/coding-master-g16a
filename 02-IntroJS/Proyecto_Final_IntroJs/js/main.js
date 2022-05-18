@@ -10,6 +10,7 @@ var ing_value = document.getElementById('ingresar_monto');
 var ret_value = document.getElementById('retirar_monto');
 var flag = 0;
 const id_name = document.querySelector('#id_name');
+const id_image = document.querySelector('#imagen');
 const txt_saldo = document.querySelector('#txt_saldo');
 const txt_ing = document.querySelector('#txt_ing');
 const txt_ret = document.querySelector('#txt_ret');
@@ -32,17 +33,20 @@ function consultar(number) {
     if (number === 1) {
         section_inicio.style.display = 'none';
         section_login.style.display = 'block';
+        id_image.innerHTML = '<img src="./src/img/user.png" alt="user1" style="width: 250px;">';
         id_name.innerHTML = `<h3>${user_1.name}</h3>`;
         flag = 1;
 
     } else if (number === 2) {
         section_inicio.style.display = 'none';
         section_login.style.display = 'block';
+        id_image.innerHTML = '<img src="./src/img/user_2.png" alt="user1" style="width: 250px;">';
         id_name.innerHTML = `<h3>${user_2.name}</h3>`;
         flag = 2;
     } else if (number === 3) {
         section_inicio.style.display = 'none';
         section_login.style.display = 'block';
+        id_image.innerHTML = '<img src="./src/img/user_3.png" alt="user1" style="width: 250px;">';
         id_name.innerHTML = `<h3>${user_3.name}</h3>`;
         flag = 3;
     }
@@ -120,25 +124,40 @@ function ingresa_Monto() {
 function ingresar_Monto() {
     if (flag === 1) {
         user_1.saldo = user_1.saldo + Number(ing_value.value);
-        section_ingresar.style.display = 'none';
-        section_result.style.display = 'block';
-        result_items.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
-        <label>Su nuevo saldo es de: $${user_1.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        if (user_1.saldo <= 990) {
+            section_ingresar.style.display = 'none';
+            section_result.style.display = 'block';
+            result_items.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
+            <label>Su nuevo saldo es de: $${user_1.saldo}</label> <section>
+            <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        } else {
+            user_1.saldo = user_1.saldo - Number(ing_value.value);
+            alert(`No se ingreso correctamente la cantidad, solo puedes ingresar la cantidad de ${990 - user_1.saldo}`);
+        }
     } else if (flag === 2) {
         user_2.saldo = user_2.saldo + Number(ing_value.value);
-        section_ingresar.style.display = 'none';
-        section_result.style.display = 'block';
-        result_items.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
-        <label>Su nuevo saldo es de: $${user_2.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        if (user_2.saldo <= 990) {
+            section_ingresar.style.display = 'none';
+            section_result.style.display = 'block';
+            result_items.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
+            <label>Su nuevo saldo es de: $${user_2.saldo}</label> <section>
+            <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        } else {
+            user_2.saldo = user_2.saldo - Number(ing_value.value);
+            alert(`No se ingreso correctamente la cantidad, solo puedes ingresar la cantidad de ${990 - user_2.saldo}`);
+        }
     } else if (flag === 3) {
         user_3.saldo = user_3.saldo + Number(ing_value.value);
-        section_ingresar.style.display = 'none';
-        section_result.style.display = 'block';
-        result_items.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
-        <label>Su nuevo saldo es de: $${user_3.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        if (user_3.saldo <= 990) {
+            section_ingresar.style.display = 'none';
+            section_result.style.display = 'block';
+            result_items.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
+            <label>Su nuevo saldo es de: $${user_3.saldo}</label> <section>
+            <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        } else {
+            user_3.saldo = user_3.saldo - Number(ing_value.value);
+            alert(`No se ingreso correctamente la cantidad, solo puedes ingresar la cantidad de ${990 - user_3.saldo}`);
+        }
     }
 }
 
@@ -172,25 +191,40 @@ function menu_Retirar() {
 function retirar_Monto() {
     if (flag === 1) {
         user_1.saldo = user_1.saldo - Number(ret_value.value);
-        section_retirar.style.display = 'none';
-        section_result.style.display = 'block';
-        result_items.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
-        <label>Su nuevo saldo es de: $${user_1.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        if (user_1.saldo >= 10) {
+            section_retirar.style.display = 'none';
+            section_result.style.display = 'block';
+            result_items.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
+            <label>Su nuevo saldo es de: $${user_1.saldo}</label> <section>
+            <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        } else {
+            user_1.saldo = user_1.saldo + Number(ret_value.value);
+            alert(`No se retiro la cantidad debido a la regla de negocio, solo puedes retirar la cantidad de ${user_1.saldo - 10}`);
+        }
     } else if (flag === 2) {
         user_2.saldo = user_2.saldo - Number(ret_value.value);
-        section_retirar.style.display = 'none';
-        section_result.style.display = 'block';
-        result_items.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
-        <label>Su nuevo saldo es de: $${user_2.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        if (user_2.saldo >= 10) {
+            section_retirar.style.display = 'none';
+            section_result.style.display = 'block';
+            result_items.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
+            <label>Su nuevo saldo es de: $${user_2.saldo}</label> <section>
+            <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        } else {
+            user_2.saldo = user_2.saldo + Number(ret_value.value);
+            alert(`No se retiro la cantidad debido a la regla de negocio, solo puedes retirar la cantidad de ${user_2.saldo - 10}`);
+        }
     } else if (flag === 3) {
         user_3.saldo = user_3.saldo - Number(ret_value.value);
-        section_retirar.style.display = 'none';
-        section_result.style.display = 'block';
-        result_items.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
-        <label>Su nuevo saldo es de: $${user_3.saldo}</label> <section>
-        <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        if (user_3.saldo >= 10) {
+            section_retirar.style.display = 'none';
+            section_result.style.display = 'block';
+            result_items.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
+            <label>Su nuevo saldo es de: $${user_3.saldo}</label> <section>
+            <button class="btn_global_in" onclick="volver_menu()">Volver</button></section>`;
+        } else {
+            user_3.saldo = user_3.saldo + Number(ret_value.value);
+            alert(`No se retiro la cantidad debido a la regla de negocio, solo puedes retirar la cantidad de ${user_3.saldo - 10}`);
+        }
     }
 }
 function volver() {
