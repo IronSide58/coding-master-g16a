@@ -14,7 +14,7 @@
         <nav>
             <h2>Bienvenido a Cajero Automatico en linea</h2>
         </nav>
-        <section id="accounts">
+        <section class="accounts">
             <div class="tarjet">
                 <div class="imagen">
                     <img src="./src/img/user.png" alt="user1" style="width: 250px;">
@@ -28,7 +28,7 @@
             </div>
             <div class="tarjet">
                 <article class="imagen">
-                    <img src="./src/img/user.png" alt="user2" style="width: 250px;">
+                    <img src="./src/img/user_2.png" alt="user2" style="width: 250px;">
                 </article>
                 <article class="tag_name">
                     <h3>Samuel</h3>
@@ -39,7 +39,7 @@
             </div>
             <div class="tarjet">
                 <article class="imagen">
-                    <img src="./src/img/user.png" alt="user3" style="width: 250px;">
+                    <img src="./src/img/user_3.png" alt="user3" style="width: 250px;">
                 </article>
                 <article class="tag_name">
                     <h3>Abigail</h3>
@@ -54,7 +54,7 @@
         <nav>
             <h2>Inicio de sesión</h2>
         </nav>
-        <section id="accounts">
+        <section class="accounts">
             <div class="tarjet">
                 <article class="imagen">
                     <img src="./src/img/user.png" alt="user1" style="width: 250px;">
@@ -73,7 +73,7 @@
     <section id="menu" class="wrap" style="display: none;">
         <nav class="nav_menu">
             <h2>Bienvenido</h2>
-            <img src="" alt="logout">
+            <a onclick="logout()"><img src="src/img/logout.png" alt="logout"></a>
         </nav>
         <section class="menu content">
             <section class="text">
@@ -81,9 +81,18 @@
                 <p>Elige un opción:</p>
             </section>
             <section class="options">
-                <button class="btn_global_in" onclick="consultar_Saldo()">CONSULTAR SALDO</button>
-                <button class="btn_global_in" onclick="ingresa_Monto()">INGRESAR MONTO</button>
-                <button class="btn_global_in" onclick="menu_Retirar()">RETIRAR MONTO</button>
+                <div>
+                    <img src="src/img/Icono_consulta.png" alt="Consultar saldo" width="250px">
+                    <button class="btn_global_in" onclick="consultar_Saldo()">CONSULTAR SALDO</button>
+                </div>
+                <div class="tarjet">
+                    <img src="src/img/icono_ingresar.png" alt="Ingresar monto" width="250px">
+                    <button class="btn_global_in" onclick="ingresa_Monto()">INGRESAR MONTO</button>
+                </div>
+                <div class="tarjet">
+                    <img src="src/img/icono_retirar.png" alt="Retirar monto" width="250px">
+                    <button class="btn_global_in" onclick="menu_Retirar()">RETIRAR MONTO</button>
+                </div>
             </section>
         </section>
     </section>
@@ -105,13 +114,16 @@
             <h2>Ingresar Monto</h2>
         </nav>
         <section class="content ing_saldo">
-            <section id="txt_ing">
+            <section id="txt_ing" class="txt_ing">
 
             </section>
-            <section class="items_ing">
+            <section class="items_ing" id="items_ing">
                 <label for="Ingresar cantidad">Ingresa la cantidad a depositar:</label>
                 <input type="number" name="ingreso" id="ingresar_monto">
                 <button onclick="ingresar_Monto()" class="btn_global_in btn_ing">Ingresar monto</button>
+            </section>
+            <section id="result_ing">
+
             </section>
         </section>
     </section>
@@ -120,13 +132,16 @@
             <h2>Retirar Monto</h2>
         </nav>
         <section class="content ing_saldo">
-            <section id="txt_ret">
+            <section id="txt_ret" class="txt_ing">
 
             </section>
-            <section class="items_ing">
+            <section id="items_ret" class="items_ing">
                 <label for="Ingresar cantidad">Ingresa la cantidad a retirar:</label>
                 <input type="number" name="ingreso" id="retirar_monto">
                 <button onclick="retirar_Monto()" class="btn_global_in btn_ing">Retirar monto</button>
+            </section>
+            <section id="results_ret" class="items_ing">
+                
             </section>
         </section>
     </section>

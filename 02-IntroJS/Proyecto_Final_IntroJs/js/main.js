@@ -11,7 +11,9 @@ var flag = 0;
 const id_name = document.querySelector('#id_name');
 const txt_saldo = document.querySelector('#txt_saldo');
 const txt_ing = document.querySelector('#txt_ing');
-const txt_ret = document.querySelector('#txt_ret')
+const txt_ret = document.querySelector('#txt_ret');
+const result_ing = document.querySelector('#result_ing');
+const result_ret = document.querySelector('#result_ret');
 
 class persona {
     constructor (name, password, saldo){
@@ -22,7 +24,7 @@ class persona {
 }
 
 let user_1 = new persona('Gabriel', 'pas123', 250);
-let user_2 = new persona('Samuel', 'sam4525', 50);
+let user_2 = new persona('Samuel', 'sam4525', 10);
 let user_3 = new persona('Abigail', 'abi_23', 990);
 
 //------------------------------------ Funciones ---------------------------------
@@ -89,7 +91,7 @@ function consultar_Saldo() {
 
 function ingresa_Monto() {
     if (flag === 1) {
-        if (user_1.saldo != 900) {
+        if (user_1.saldo < 990) {
             section_menu.style.display = 'none';
             section_ingresar.style.display = 'block';
             txt_ing.innerHTML = `<h1> Bienvenido ${user_1.name}`;
@@ -97,7 +99,7 @@ function ingresa_Monto() {
             alert('Superaste la maxima cantidad que se puede ingresar');
         }
     } else if (flag === 2) {
-        if (user_2.saldo != 900) {
+        if (user_2.saldo < 990) {
             section_menu.style.display = 'none';
             section_ingresar.style.display = 'block';
             txt_ing.innerHTML = `<h1> Bienvenido ${user_2.name}`;
@@ -105,7 +107,7 @@ function ingresa_Monto() {
             alert('Superaste la maxima cantidad que se puede ingresar');
         }
     } else if (flag === 3) {
-        if (user_3.saldo != 900) {
+        if (user_3.saldo < 990) {
             section_menu.style.display = 'none';
             section_ingresar.style.display = 'block';
             txt_ing.innerHTML = `<h1> Bienvenido ${user_3.name}`;
@@ -118,44 +120,44 @@ function ingresa_Monto() {
 function ingresar_Monto() {
     if (flag === 1) {
         user_1.saldo = user_1.saldo + Number(ing_value.value);
-        alert(`Se ingreso la cantidad ${ing_value.value} correctamente`);
-        section_ingresar.style.display = 'none';
-        section_menu.style.display = 'block';
+        items_ing.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
+        <label>Su nuevo saldo es de: $${user_1.saldo}</label> <section>
+        <button class="btn_global_in" onclick="volver_ingresar()">Volver</button></section>`;
     } else if (flag === 2) {
         user_2.saldo = user_2.saldo + Number(ing_value.value);
-        alert(`Se ingreso la cantidad ${ing_value.value} correctamente`);
-        section_ingresar.style.display = 'none';
-        section_menu.style.display = 'block';
+        items_ing.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
+        <label>Su nuevo saldo es de: $${user_2.saldo}</label> <section>
+        <button class="btn_global_in" onclick="volver_ingresar()">Volver</button></section>`;
     } else if (flag === 3) {
         user_3.saldo = user_3.saldo + Number(ing_value.value);
-        alert(`Se ingreso la cantidad ${ing_value.value} correctamente`);
-        section_ingresar.style.display = 'none';
-        section_menu.style.display = 'block';
+        items_ing.innerHTML = `<h1>Se ingreso la cantidad de $${ing_value.value} a su cuenta</h1>
+        <label>Su nuevo saldo es de: $${user_3.saldo}</label> <section>
+        <button class="btn_global_in" onclick="volver_ingresar()">Volver</button></section>`;
     }
 }
 
 function menu_Retirar() {
     if (flag === 1) {
-        if (user_1.saldo != 10) {
+        if (user_1.saldo > 10) {
             section_menu.style.display = 'none';
             section_retirar.style.display = 'block';
-            txt_ret.innerHTML = `<h1> Bienvenido ${user_1.name}`;
+            txt_ret.innerHTML = `<h1> Bienvenido ${user_1.name} </h1>`;
         } else {
             alert('No puedes retirar la cantidad, no tienes fondos suficientes');
         }
     } else if (flag === 2) {
-        if (user_2.saldo != 10) {
+        if (user_2.saldo > 10) {
             section_menu.style.display = 'none';
             section_retirar.style.display = 'block';
-            txt_ret.innerHTML = `<h1> Bienvenido ${user_2.name}`;
+            txt_ret.innerHTML = `<h1> Bienvenido ${user_2.name} </h1>`;
         } else {
             alert('No puedes retirar la cantidad, no tienes fondos suficientes');
         }
     } else if (flag === 3) {
-        if (user_3.saldo != 10) {
+        if (user_3.saldo > 10) {
             section_menu.style.display = 'none';
             section_retirar.style.display = 'block';
-            txt_ret.innerHTML = `<h1> Bienvenido ${user_3.name}`;
+            txt_ret.innerHTML = `<h1> Bienvenido ${user_3.name}</h1>`;
         } else {
             alert('No puedes retirar la cantidad, no tienes fondos suficientes');
         }
@@ -164,22 +166,34 @@ function menu_Retirar() {
 function retirar_Monto() {
     if (flag === 1) {
         user_1.saldo = user_1.saldo - Number(ret_value.value);
-        alert(`Se retiro la cantidad ${ret_value.value} correctamente`);
-        section_retirar.style.display = 'none';
-        section_menu.style.display = 'block';
+        result_ret.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
+        <label>Su nuevo saldo es de: $${user_1.saldo}</label> <section>
+        <button class="btn_global_in" onclick="volver_retirar()">Volver</button></section>`;
     } else if (flag === 2) {
         user_2.saldo = user_2.saldo - Number(ret_value.value);
-        alert(`Se retiro la cantidad ${ret_value.value} correctamente`);
-        section_retirar.style.display = 'none';
-        section_menu.style.display = 'block';
+        result_ret.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
+        <label>Su nuevo saldo es de: $${user_2.saldo}</label> <section>
+        <button class="btn_global_in" onclick="volver_retirar()">Volver</button></section>`;
     } else if (flag === 3) {
         user_3.saldo = user_3.saldo - Number(ret_value.value);
-        alert(`Se retiro la cantidad ${ing_value.value} correctamente`);
-        section_retirar.style.display = 'none';
-        section_menu.style.display = 'block';
+        result_ret.innerHTML = `<h1>Se retiro la cantidad de $${ret_value.value} de su cuenta</h1>
+        <label>Su nuevo saldo es de: $${user_3.saldo}</label> <section>
+        <button class="btn_global_in" onclick="volver_retirar()">Volver</button></section>`;
     }
 }
 function volver() {
     section_menu.style.display = 'block';
     section_saldo.style.display = 'none';
+}
+function volver_ingresar() {
+    section_menu.style.display = 'block';
+    section_ingresar.style.display = 'none';
+}
+function volver_retirar() {
+    section_menu.style.display = 'block';
+    section_retirar.style.display = 'none';
+}
+function logout() {
+    section_menu.style.display = 'none';
+    section_inicio.style.display = 'block';
 }
