@@ -8,9 +8,6 @@ class Queue{
     dequeue() {
         return this.items.shift();
     }
-    recorrerqueue(index){
-        return this.items[index];
-    }
     peek() {
         return this.items[0];
     }
@@ -36,11 +33,12 @@ queue_color.enqueue('blanco')
 function separarQueues(queue) {
     let queue_par = new Queue();
     let queue_impar = new Queue();
-    for (let i = 0; i < queue.size(); i++) {
+    var size = queue.size()
+    for (let i = 0; i < size; i++) {
         if (i %2 == 0) {
-            queue_par.enqueue(queue.recorrerqueue(i));
+            queue_par.enqueue(queue.dequeue());
         } else {
-            queue_impar.enqueue(queue.recorrerqueue(i));
+            queue_impar.enqueue(queue.dequeue());
         }
     }
     return `Cola 1: ${queue_par.print()} 
@@ -64,9 +62,11 @@ queue_tickets.enqueue({user: 'User 11', ticket: true})
 function sinColados(queue) {
     let queueSinColados = new Queue();
     var size = queue.size();
+    var item;
     for (let i = 0; i < size; i++) {
-        if(queue.recorrerqueue(i).ticket == true){
-            queueSinColados.enqueue(queue.recorrerqueue(i));
+        item = queue.dequeue();
+        if(item.ticket == true){
+            queueSinColados.enqueue(item);
         }
     }
     return queueSinColados.print();
