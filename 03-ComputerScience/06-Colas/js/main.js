@@ -41,8 +41,7 @@ function separarQueues(queue) {
             queue_impar.enqueue(queue.dequeue());
         }
     }
-    return `Cola 1: ${queue_par.print()} 
-    Cola 2: ${queue_impar.print()}`;
+    return 'Cola 1:' + queue_par.print() + ' Cola 2:' + queue_impar.print();
 }
 
 /*Ejercicio 2.- Se tiene una cola en la cual se han repartido tickets con el orden de atención. Sin embargo, llegada la hora de inicio hay muchos “colados”, es por esto que se le ordena al vigilante que retire a todos aquellos que no tienen ticket. Muestra la cola inicial, qué elementos fueron retirados de la cola y la cola final. */
@@ -60,14 +59,13 @@ queue_tickets.enqueue({user: 'User 10', ticket: false})
 queue_tickets.enqueue({user: 'User 11', ticket: true})
 
 function sinColados(queue) {
-    let queueSinColados = new Queue();
     var size = queue.size();
     var item;
     for (let i = 0; i < size; i++) {
         item = queue.dequeue();
         if(item.ticket == true){
-            queueSinColados.enqueue(item);
+            queue.enqueue(item);
         }
     }
-    return queueSinColados.print();
+    return queue.print();
 }
