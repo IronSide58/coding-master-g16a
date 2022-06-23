@@ -56,7 +56,7 @@ function print(filtro) {
         container_cards.insertAdjacentHTML("beforeend",filtro[i]);
     }
 }
-/*------------------Imprime cards en pantalla--------------------*/
+/*------------------Ordenamiento--------------------*/
 function sortPokemon(flag) {
     let aux = [];
     if (flag === 1) {
@@ -114,7 +114,7 @@ function getType(index) {
     let typeUppe = [];
     let string = "";
     for (let i = 0; i < pokemones[index].type.length; i++) {
-        typeUppe.push(`<div class="rounded col-5" style="${background(pokemones[index].type[i])} margin: 5px 5px;">${pokemones[index].type[i][0].toUpperCase() + pokemones[index].type[i].substring(1)}</div>`);
+        typeUppe.push(`<div class="rounded col-5 typeStyle" style="${background(pokemones[index].type[i])}">${pokemones[index].type[i][0].toUpperCase() + pokemones[index].type[i].substring(1)}</div>`);
         string += typeUppe[i];
     }
     return string;
