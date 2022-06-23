@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./scr/img/pokedex-icon.ico" type="image/x-icon">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css
+    ">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="js/pokeapi.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <section class="console">
+        <section class="screen">
+            <section class="container">
+                <div class="row align-items-center justify-content-center">
+                    <h1 class="col-10 tituleScreen">POKEDEX</h1>
+                    <!-- Desplegable ordenamiento -->
+                    <div class="dropdown col-auto">
+                        <button class="border border-info btn dropdown-toggle text-bg-info" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">Ordenar</button>
+                        <ul class="dropdown-menu w-100" style="height: auto;;" aria-labelledby="dropdownMenu2">
+                            <li><button class="dropdown-item " type="button" onclick="sortPokemon(1)">A-Z</button></li>
+                            <li><button class="dropdown-item" type="button" onclick="sortPokemon(2)">Z-A</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="row row-cols-1 row-cols-md-4 g-1 over" id="container-cards">
+                <!-- Contenido JSON-->
+                
+            </section>
+        </section>
+        <section class="menu">
+            <section class="container">
+                <p class="fw-semibold">Escribe el o los nombres de cualquier pokemon:</p>
+                <section class="container">
+                    <section class="row">
+                        <!--  Entrada de busqueda  -->
+                        <section class="col-11" style="padding: 0;">
+                            <input type="search" class="form-control form-control-sm h-100 w-100" name="search" id="search-btn">
+                        </section>
+                        <!-- Menú de selección desplegable -->
+                        <section class="dropdown col col-lg-1" style="padding: 0;">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Filtrar</button>
+                            <ul class="dropdown-menu overflow-auto" aria-labelledby="dropdownMenuButton1">
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="steel"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Acero</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="water" name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Agua</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="bug" name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Bicho</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="dragon"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Dragón</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="electric"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Eléctrico</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="ghost"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Fantasma</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="fire" name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Fuego</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="fairy"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Hada</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="ice"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Hielo</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="fighting"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Lucha</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="normal"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Normal</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="dark"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Oscuro</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="grass" name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Planta</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="psychic"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Psíquico</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="rock"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Roca</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="ground"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Tierra</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="flying"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Volador</label>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="checkbox" value="poison"name="checks[]">
+                                    <label class="form-check-label" for="flexCheckDefault">Veneno</label>
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+                </section>
+                <!-- Botón para iniciar la busqueda -->
+                <input type="button" class="btn btn-primary btn-md w-100 mt-2" data-bs-toggle="button" onclick="search()" value="Buscar">
+            </section>
+        </section>
+    </section>
+</body>
+</html>
