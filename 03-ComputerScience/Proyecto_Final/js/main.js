@@ -217,7 +217,7 @@ function obtenerDatos(i) {
                                     <h3>ID: ${pokemones[i].id}</h3>
                                 </div>
                                 <div class="col">
-                                    <h3>Peso: ${pokemones[i].height}</h3>
+                                    <h3>Peso: ${pokemones[i].weight}</h3>
                                 </div>
                             </div>
                             <div class="row">
