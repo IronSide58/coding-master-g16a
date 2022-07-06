@@ -1,11 +1,14 @@
 {
   "name": "mainjs",
   "version": "1.0.0",
-  "description": "Primer programa con npm",
+  "description": "Primer programa con NPM",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Uriel Bucio",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
 }

@@ -1,0 +1,16 @@
+{
+    "data" : [
+        {
+            "id" : 1,
+            "nombre": "Abigail"
+        },
+        {
+            "id" : 2,
+            "nombre": "Israel"
+        },
+        {
+            "id" : 3,
+            "nombre": "Uriel"
+        }
+    ]
+}
