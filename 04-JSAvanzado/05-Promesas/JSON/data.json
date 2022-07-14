@@ -3,7 +3,8 @@
         {
             "id": 1,
             "nombre": "Uriel"
-        }, {
+        }, 
+        {
             "id": 2,
             "nombre": "Daniel",
             "mascotas": {
@@ -17,7 +18,8 @@
                     }
                 ]
             }
-        }, {
+        }, 
+        {
             "id": 3,
             "nombre": "Flor"
         }
