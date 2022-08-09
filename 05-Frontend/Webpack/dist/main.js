@@ -1,1 +1,67 @@
-(()=>{"use strict";var e={733:e=>{e.exports={greetings:e=>`Hola ${e} desde Webpack con JS`}}},r={};function o(t){var s=r[t];if(void 0!==s)return s.exports;var i=r[t]={exports:{}};return e[t](i,i.exports,o),i.exports}(()=>{const{greetings:e}=o(733);console.log("Mi primer proyecto Webpack"),console.log(file.greetings("Uriel"))})()})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/js/greetings.js":
+/*!*****************************!*\
+  !*** ./src/js/greetings.js ***!
+  \*****************************/
+/***/ ((module) => {
+
+eval("\r\n// function greetings(name) {\r\n//     return `Hola ${name} desde Webpack con JS`;\r\n// }\r\n\r\n// // Arrow function\r\n\r\n// const greetings = (name) => {\r\n//     return `Hola ${name} desde Webpack con JS`;\r\n// }\r\n\r\nconst greetings = (name) => `Hola ${name} desde Webpack con JS`;\r\n\r\nmodule.exports = { greetings };\r\n\r\n// Esta es la forma que usa REACT y EMS6\r\n// export default { greetings };\n\n//# sourceURL=webpack://webpack/./src/js/greetings.js?");
+
+/***/ }),
+
+/***/ "./src/js/main.js":
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\r\nconst { greetings } = __webpack_require__(/*! ./greetings */ \"./src/js/greetings.js\");\r\n// import file from './greetings';\r\n\r\nconsole.log('Mi primer proyecto Webpack');\r\nconsole.log(file.greetings('Uriel'));\n\n//# sourceURL=webpack://webpack/./src/js/main.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/main.js");
+/******/ 	
+/******/ })()
+;
