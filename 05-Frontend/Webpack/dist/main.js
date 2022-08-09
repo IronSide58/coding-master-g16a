@@ -1,0 +1,1 @@
+(()=>{"use strict";var e={733:e=>{e.exports={greetings:e=>`Hola ${e} desde Webpack con JS`}}},r={};function o(t){var s=r[t];if(void 0!==s)return s.exports;var i=r[t]={exports:{}};return e[t](i,i.exports,o),i.exports}(()=>{const{greetings:e}=o(733);console.log("Mi primer proyecto Webpack"),console.log(file.greetings("Uriel"))})()})();
