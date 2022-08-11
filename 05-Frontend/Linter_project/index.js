@@ -1,5 +1,8 @@
-/* eslint-disable no-undef */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+
 'use strict';
+
 const { suma } = require('./operations');
 const hello = () => 'Linter';
 

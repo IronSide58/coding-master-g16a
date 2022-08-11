@@ -1,29 +1,13 @@
+/* eslint-disable strict */
 module.exports = {
-	'env': {
-		'browser': false,
-		'commonjs': true,
-		'es2021': true
-	},
-	'extends': 'eslint:recommended',
-	'parserOptions': {
-		'ecmaVersion': 'latest'
-	},
-	'rules': {
-		'indent': [
-			'error',
-			'tab'
-		],
-		'linebreak-style': [
-			'error',
-			'windows'
-		],
-		'quotes': [
-			'error',
-			'single'
-		],
-		'semi': [
-			'error',
-			'always'
-		]
-	}
+  env: {
+    browser: false,
+    commonjs: true,
+    es2021: true
+  },
+  extends: 'airbnb-base/legacy',
+  parserOptions: {
+    ecmaVersion: 'latest'
+  }
+
 };
