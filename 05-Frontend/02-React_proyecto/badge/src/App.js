@@ -49,7 +49,7 @@ class App extends React.Component {
         <NavBar/> 
         <BadgeForm handleChange = {this.handleChange}/>
         <Badge state={this.state}/>
-        <div className="container">
+        <div className="App">
           <div className="row align-items-start">
             {/* <ul className="row"> */}
               {/* <li className="col-6 col-md-3"> */}
