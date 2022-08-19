@@ -1,9 +1,24 @@
-import React from "react"
+import React, {useState} from "react"
 
-const AddCategory = (props) => {
+const AddCategory = ({onAddCategory}) => {
+  const [input, setInput] = useState('');
+
+  const onInputOnchange = (event) => {
+    setInput(event.target.value);
+  }
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if (input.trim().length <= 1) return;
+
+    onAddCategory(input.trim());
+    setInput('');
+  };
   return (
     <>
-      <h3>AddCategory</h3>
+      <form onSubmit={onSubmit}>
+        <input type="text" placeholder="Buscar Gifs" value={input} onChange={onInputOnchange} />
+      </form>
     </>
   )
 }
