@@ -6,7 +6,7 @@
     "extends": [
         "plugin:react/recommended",
         "airbnb",
-        "plugin:react/jsx-runtime"
+        "plugin:react-hooks/recommended"
     ],
     "overrides": [
     ],
@@ -15,8 +15,16 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "react-hooks"
     ],
     "rules": {
+        "react/self-closing-comp": ["error", {
+            "component": true,
+            "html": false
+        }],
+        "comma-dangle": ["error", {
+            "functions": "never"
+        }]
     }
 }
