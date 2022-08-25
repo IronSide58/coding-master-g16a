@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(157, 59%, 51%);
+  /* ### Accent */
+  --blue: hsl(248, 32%, 49%);
+  /* ### Neutral */
+  --darkBlue: hsl(249, 10%, 26%); 
+  --grayishBlue: hsl(246, 25%, 77%);
+  --grayBackground: #ebebeb;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--grayBackground);
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  min-height: 100vh;
+}
+/* Styles Header */
+header {
+  align-items: center;
+  background-color: var(--red);
+  box-shadow: 0px 8px 29px -1px rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: space-around;
+  max-height: 100px;
+  position: fixed;
+  padding: 20px 90px;
+  width: 100%;
+  -webkit-box-shadow: 0px -8px 29px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px -8px 29px -1px rgba(0,0,0,0.75)
+}
+.logo {
+  position: relative;
+  width: 25%;
+}
+.title {
+  color: white;
+  display: inline;
+  position: absolute;
+  margin-left: 15px;
+  top: 5%;
+}
+.input {
+  border-radius: 35px;
+  height: 50px;
+  overflow: hidden;
+  width: 50%;
+}
+.search_input {
+  background-color: white;
+  border: none;
+  border-right: 1px solid var(--grayBackground);
+  border-radius: 35px 0 0 35px;
+  font-size: 1rem;
+  font-weight: 500;
+  height: 50px;
+  margin-left: 45px;
+  padding: 15px;
+  width: 70%;
+}
+.search_logo {
+  background-color: white;
+  background-image: url(./assets/img/search_icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  border: none;
+  border-radius: 0 35px 35px 0;
+  height: 51px;
+  width: 10%;
+}
+.search_logo:hover {
+  cursor: pointer;
+}
+.login-container {
+  height: 50px;
+  padding: 3px;
+  width: 25%;
+}
+.btn {
+  border: none;
+  border-radius: 35px;
+  font-weight: 400;
+  margin: 0 10px;
+  padding: 15px;
+  text-align: center;
+  width: 35%;
+}
+.btn:hover {
+  background-color: var(--darkBlue);
+  cursor: pointer;
+  opacity: 0.9;
+}
+.btn-login {
+  background-color: var(--blue);
+  color: white;
+  width: 38%;
+}
+.btn-register {
+  background-color: var(--green);
+  color: white;
+}
+/* Finish styles header */
+/* Home Styles */
+.grid-container {
+  display: grid;
+  gap: 20px;
+  grid-auto-flow: dense;
+  grid-auto-rows: minmax(200px, auto);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  margin: 100px auto 0;
+  padding: 0 100px;
+  width: 90%;
+}
+.card-container {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  min-height: 350px;
+}
+.card-image img {
+  display: block;
+  height: 250px;
+  margin: 5px auto;
+  width: 250px;
+}
+hr {
+  border: none;
+  border-top: 2px solid var(--grayBackground);
+}
+.card-content {
+  padding: 15px 20px 20px;
+}
