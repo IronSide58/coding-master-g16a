@@ -1,17 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = ({id, name, image, price}) => {
   return (
-    <div className="card-container">
-        <div className="card-image">
-          <img src={image}/>
-        </div>
-        <hr/>
-        <div className="card-content">
-          <h2>{name}</h2>
-          <p className="price">$ {price}</p>
-        </div>
-    </div>
+    <Link to={`/details/${id}`}>
+      <div className="card-container">
+          <div className="card-image">
+            <img src={image}/>
+          </div>
+          <hr/>
+          <div className="card-content">
+            <h2>{name}</h2>
+            <p className="price">$ {price}</p>
+          </div>
+      </div>
+    </Link>
   )
 }
 
