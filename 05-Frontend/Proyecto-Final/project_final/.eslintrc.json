@@ -25,6 +25,10 @@
         }],
         "comma-dangle": ["error", {
             "functions": "never"
+        }],
+        "react/function-component-definition": ["enabled", {
+            "namedComponents": "arrow-function",
+            "unnamedComponents": "arrow-function"
         }]
     }
 }
