@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../Card/Card';
 
-const Home = () => {
+const Home = ({props}) => {
   const [items, setItems] = useState([])
-
+  
   useEffect(() => {
     getItems()
   },[])
@@ -24,10 +24,15 @@ const Home = () => {
     ))
     setItems(item.filter(item => item.image.startsWith('http')))
   }
+  
   return (
     <main className="grid-container">
       {
-        items.map(item => (
+        props !== ''
+        ? items.filter(item => item.name.toUpperCase().includes(props.toUpperCase())).map(item => (
+          <Card key={item.id} {...item}/>
+        ))
+        : items.map(item => (
           <Card key={item.id} {...item}/>
         ))
       }
