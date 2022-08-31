@@ -13,6 +13,15 @@ function App() {
   const [dataUser, setDataUser] = useState({})
 
   useEffect(() => {
+    let userSession = localStorage.getItem('isUserLogin');
+    userSession === 'false' ? setIsUserLogin(false) : setIsUserLogin(true);
+  }, [])
+  
+  useEffect(() => {
+    localStorage.setItem('isUserLogin', isUserLogin);
+  }, [isUserLogin])
+
+  useEffect(() => {
     authentication.token && (async () => {
       const userData = await axios.get('https://ecomerce-master.herokuapp.com/api/v1/user/me', {
         headers: {
@@ -23,15 +32,6 @@ function App() {
       setDataUser(userData.data.user);
     })()
   }, [authentication])
-  
-  // useEffect(() => {
-  //   const userSession =localStorage.getItem('isUserLogin');
-  //   setIsUserLogin(userSession);
-  // }, [])
-  
-  // useEffect(() => {
-  //   localStorage.setItem('isUserLogin', isUserLogin);
-  // }, [isUserLogin])
 
   return (
     <>
@@ -41,7 +41,7 @@ function App() {
           <Route path='/login' element={<Login setAuthentication={setAuthentication} setIsUserLogin={setIsUserLogin}/>}/>
           <Route path='/signup' element={<SignUp />}/>
         </>}
-        <Route path='/details/:id' element={<Details />}/>
+        <Route path='/details/:id' element={<Details isUserLogin={isUserLogin} dataUser={dataUser} />}/>
         <Route path='*' element={<h1>404:  No found</h1>}/>
       </Routes>
     </>
