@@ -5,8 +5,7 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb",
-        "plugin:react-hooks/recommended"
+        "airbnb"
     ],
     "overrides": [
     ],
@@ -15,14 +14,9 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "react-hooks"
+        "react"
     ],
     "rules": {
-        "react/self-closing-comp": ["error", {
-            "component": true,
-            "html": false
-        }],
         "comma-dangle": ["error", {
             "functions": "never"
         }],
