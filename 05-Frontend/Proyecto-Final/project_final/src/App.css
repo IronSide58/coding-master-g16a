@@ -82,7 +82,7 @@ header {
 .search_logo:hover {
   cursor: pointer;
 }
-.login-container {
+.btn-container {
   height: 50px;
   padding: 3px;
   width: 25%;
@@ -207,4 +207,72 @@ hr {
   font-size: 1.2rem;
   padding: 15px;
   width: 100%;
+}
+/* SignUp Styles */
+.backgroundImage{
+  background-image: url('../src/assets/img/bg.png');
+  background-color: var(--red);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 110px;
+  min-height: 100vh;
+}
+.login-container {
+  margin: 0 auto;
+  padding-left: 15px;
+  width: 30%;
+}
+.title-form {
+  background-color: var(--blue);
+  border-radius: 10px;
+  box-shadow: 0 10px 5px 0px rgba(0,0,0,0.5);
+  color: white;
+  font-weight: 600;
+  margin: 0 auto 20px;
+  padding: 18px;
+  text-align: center;
+}
+.form_container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 5px 0px rgba(0,0,0,0.2);
+  padding: 40px;
+  width: 100%;
+}
+.form_container label {
+  color: var(--grayishBlue);
+}
+.input-login, .btn_claim{
+  border: 1px solid var(--grayishBlue);
+  border-radius: 5px;
+  display: block;
+  font-size: 15px;
+  margin-bottom: 20px;
+  padding: 18px;
+  position: relative;
+  width: 100%;
+}
+.input_item:focus {
+  border: 1px solid var(--darkBlue);
+  font-weight: 700;
+  outline: none;
+}
+.btn_claim {
+  background-color: var(--green);
+  border: none;
+  box-shadow: 0 2px 0 0px rgba(0,0,0,0.5);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.btn_claim:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.form-register {
+  width: 40%;
+}
+.mrg {
+  padding-top: 20px;
 }
