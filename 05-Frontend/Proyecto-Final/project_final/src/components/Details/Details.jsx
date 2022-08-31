@@ -5,13 +5,13 @@ import Header from '../Header/Header';
 
 const Details = () => {
   const [itemId, setItemId] = useState('')
-  let params = useParams()
+  const params = useParams()
   
   useEffect(() => {
     (async () => {
       try {
-        const data = await axios.get(`https://ecomerce-master.herokuapp.com/api/v1/item/${params.id}`);
-        setItemId(data.data);
+        const response = await axios.get(`https://ecomerce-master.herokuapp.com/api/v1/item/${params.id}`);
+        setItemId(response.data);
       } catch (error) {
         console.error('Error', error);
       }
