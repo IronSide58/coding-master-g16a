@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo.png';
 
-const Header = ({getId, isUserLogin, authentication}) => {
+const Header = ({getId, isUserLogin, dataUser}) => {
   const [search, setSearch] = useState('');
   console.log(isUserLogin);
   const onChange = (event) => {
@@ -36,7 +36,7 @@ const Header = ({getId, isUserLogin, authentication}) => {
         <input type="submit" value="buscar" className="search_logo" />
       </form>
       <section className="btn-container">
-        {isUserLogin ? <h1>Usuario</h1> : <><Link to={'/login'}><button className="btn-login btn">Iniciar sesion</button></Link>
+        {isUserLogin ? <h1>{dataUser.first_name} {dataUser.last_name}</h1> : <><Link to={'/login'}><button className="btn-login btn">Iniciar sesion</button></Link>
         <Link to={'/signup'}><button className="btn-register btn">Registrar</button></Link></>}
       </section>
     </header>
