@@ -2,8 +2,9 @@ import React, { useState, useEffect} from 'react'
 import axios from 'axios'
 import { useParams } from "react-router-dom";
 import Header from '../Header/Header';
+import product_defaults from '../../assets/img/product_default.png'
 
-const Details = () => {
+const Details = ({ isUserLogin, dataUser }) => {
   const [itemId, setItemId] = useState('')
   const params = useParams()
   
@@ -20,11 +21,11 @@ const Details = () => {
   
   return (
     <>
-      <Header />
+      <Header isUserLogin={isUserLogin} dataUser={dataUser} />
       <main>
         <section className="details">
           <div className="details-image">
-            <img src={itemId.image} alt={itemId.name}/>
+            <img src={itemId.image !== undefined ? itemId.image === undefined || !itemId.image.startsWith('http') ? product_defaults : itemId.image : itemId.images === undefined || !itemId.images.startsWith('http') ? product_defaults : itemId.images} alt={itemId.name}/>
           </div>
           <div className="details-content">
             <h1>{itemId.product_name}</h1>
