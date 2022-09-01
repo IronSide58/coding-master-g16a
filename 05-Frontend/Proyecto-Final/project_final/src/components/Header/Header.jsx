@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo.png';
 
-const Header = ({ getId, isUserLogin, dataUser }) => {
+const Header = ({ getSearch, isUserLogin, dataUser }) => {
   const [search, setSearch] = useState('');
+
   const onChange = (event) => {
     setSearch(event.target.value);
   };
@@ -13,13 +14,13 @@ const Header = ({ getId, isUserLogin, dataUser }) => {
 
     if (search.trim().length <= 1) return;
 
-    getId(search.trim());
+    getSearch(search.trim());
 
     setSearch('');
   };
 
   const onClick = () => {
-    getId('');
+    getSearch('');
   };
 
   return (

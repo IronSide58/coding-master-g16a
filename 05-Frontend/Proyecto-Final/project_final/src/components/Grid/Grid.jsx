@@ -3,7 +3,7 @@ import axios from 'axios';
 import Card from '../Card/Card';
 import productDefaults from '../../assets/img/product_default.png';
 
-const Grid = ({ props }) => {
+const Grid = ({ itemSearch }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Grid = ({ props }) => {
   return (
     <main className="grid-container">
       {
-        props !== '' ? items.filter((item) => item.name.toUpperCase().includes(props.toUpperCase())).map((item) => (
+        itemSearch !== '' ? items.filter((item) => item.name.toUpperCase().includes(itemSearch.toUpperCase())).map((item) => (
           <Card key={item.id} {...item} />
         ))
           : items.map((item) => (

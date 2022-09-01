@@ -5,14 +5,14 @@ import Grid from './components/Grid/Grid';
 const Home = ({ isUserLogin, dataUser }) => {
   const [itemSearch, setItemSearch] = useState('');
 
-  const getId = (item) => {
+  const getSearch = (item) => {
     setItemSearch(item);
   };
 
   return (
     <>
-      <Header getId={getId} isUserLogin={isUserLogin} dataUser={dataUser} />
-      <Grid props={itemSearch} />
+      <Header getSearch={getSearch} isUserLogin={isUserLogin} dataUser={dataUser} />
+      <Grid itemSearch={itemSearch} />
     </>
   );
 };
