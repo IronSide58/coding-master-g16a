@@ -38,7 +38,7 @@ const App = () => {
         </>
       ) : null}
       <Route path="/details/:id" element={<Details isUserLogin={isUserLogin} dataUser={dataUser} />} />
-      <Route path="*" element={<h1>404:  No found</h1>} />
+      <Route path="*" element={<Home />} />
     </Routes>
   );
 };
