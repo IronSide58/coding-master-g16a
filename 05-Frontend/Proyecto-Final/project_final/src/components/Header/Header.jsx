@@ -2,42 +2,51 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo.png';
 
-const Header = ({getId, isUserLogin, dataUser}) => {
+const Header = ({ getId, isUserLogin, dataUser }) => {
   const [search, setSearch] = useState('');
-  console.log(isUserLogin);
   const onChange = (event) => {
-    setSearch(event.target.value)
+    setSearch(event.target.value);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    if (search.trim().length <= 1 ) return;
+    if (search.trim().length <= 1) return;
 
     getId(search.trim());
 
-    setSearch('')
+    setSearch('');
   };
 
   const onClick = () => {
-    getId('')
-  }
-  
+    getId('');
+  };
+
   return (
     <header>
       <section className="logo">
-        <Link to={'/'} onClick={onClick}>
-          <img src={logo} alt="logo"/>
+        <Link to="/" onClick={onClick}>
+          <img src={logo} alt="logo" />
           <h1 className="title">E-Commerce</h1>
         </Link>
       </section>
       <form className="input" onSubmit={onSubmit}>
-        <input type="search" value={search} placeholder="Buscar producto..." className="search_input" onChange={onChange}/>
+        <input type="search" value={search} placeholder="Buscar producto..." className="search_input" onChange={onChange} />
         <input type="submit" value="buscar" className="search_logo" />
       </form>
       <section className="btn-container">
-        {isUserLogin ? <h1>{dataUser.first_name} {dataUser.last_name}</h1> : <><Link to={'/login'}><button className="btn-login btn">Iniciar sesion</button></Link>
-        <Link to={'/signup'}><button className="btn-register btn">Registrar</button></Link></>}
+        {isUserLogin ? (
+          <h1>
+            {dataUser.first_name}
+            {' '}
+            {dataUser.last_name}
+          </h1>
+        ) : (
+          <>
+            <Link to="/login"><button type="submit" className="btn-login btn">Iniciar sesion</button></Link>
+            <Link to="/signup"><button type="submit" className="btn-register btn">Registrar</button></Link>
+          </>
+        )}
       </section>
     </header>
   );

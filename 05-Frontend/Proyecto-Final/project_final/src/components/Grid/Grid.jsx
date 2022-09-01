@@ -1,46 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../Card/Card';
-import product_defaults from '../../assets/img/product_default.png'
+import productDefaults from '../../assets/img/product_default.png';
 
-const Grid = ({props}) => {
-  const [items, setItems] = useState([])
-  
+const Grid = ({ props }) => {
+  const [items, setItems] = useState([]);
+
   useEffect(() => {
-    getItems()
-  },[])
+    getItems();
+  }, []);
 
   const getItems = async () => {
     try {
       const response = await axios.get('https://ecomerce-master.herokuapp.com/api/v1/item');
-      const item = response.data.map(item => (
+      const item = response.data.map((param) => (
         {
-          id: item._id,
-          name: item.product_name,
-          image: 
-            item.image !== undefined ? item.image === undefined || !item.image.startsWith('http') ? product_defaults : item.image : item.images === undefined || !item.images.startsWith('http') ? product_defaults : item.images, 
-          price: item.price
+          id: param._id,
+          name: param.product_name,
+          image: param.image !== undefined ? param.image === undefined || !param.image.startsWith('http') ? productDefaults : param.image : param.images === undefined || !param.images.startsWith('http') ? productDefaults : param.images,
+          price: param.price,
         }
-      ))
-      setItems(item)
+      ));
+      setItems(item);
     } catch (error) {
       console.error('Error', error);
     }
-  }
-  
+  };
+
   return (
     <main className="grid-container">
       {
-        props !== ''
-        ? items.filter(item => item.name.toUpperCase().includes(props.toUpperCase())).map(item => (
-          <Card key={item.id} {...item}/>
+        props !== '' ? items.filter((item) => item.name.toUpperCase().includes(props.toUpperCase())).map((item) => (
+          <Card key={item.id} {...item} />
         ))
-        : items.map(item => (
-          <Card key={item.id} {...item}/>
-        ))
+          : items.map((item) => (
+            <Card key={item.id} {...item} />
+          ))
       }
     </main>
-  )
-}
+  );
+};
 
-export default Grid
+export default Grid;
