@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo.png';
+import user from '../../assets/img/user.png';
 
-const Header = ({ getSearch, isUserLogin, dataUser }) => {
+const Header = ({ getSearch, isUserLogin, dataUser, setIsUserLogin }) => {
   const [search, setSearch] = useState('');
 
   const onChange = (event) => {
@@ -23,6 +24,10 @@ const Header = ({ getSearch, isUserLogin, dataUser }) => {
     getSearch('');
   };
 
+  const logout = () => {
+    setIsUserLogin(false);
+  };
+
   return (
     <header>
       <section className="logo">
@@ -37,11 +42,17 @@ const Header = ({ getSearch, isUserLogin, dataUser }) => {
       </form>
       <section className="btn-container">
         {isUserLogin ? (
-          <h1>
-            {dataUser.first_name}
-            {' '}
-            {dataUser.last_name}
-          </h1>
+          <div className="logout">
+            <div className="user-login">
+              <img src={user} className="user-logo" alt="user" />
+              <h1>
+                {dataUser.first_name}
+                {' '}
+                {dataUser.last_name}
+              </h1>
+            </div>
+            <button type="button" className="btn btn-logout" onClick={logout}>Cerrar sesión</button>
+          </div>
         ) : (
           <>
             <Link to="/login"><button type="submit" className="btn-login btn">Iniciar sesion</button></Link>

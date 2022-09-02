@@ -110,6 +110,28 @@ header {
   background-color: var(--green);
   color: white;
 }
+.logout {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.user-login {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+h1 {
+  color: white;
+  font-size: 1.2rem;
+}
+.user-logo {
+  width: 45px;
+}
+.btn-logout {
+  background-color: var(--green);
+  color: white;
+}
 /* Finish styles header */
 /* Home Styles */
 .grid-container {

@@ -1,8 +1,9 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Grid from './components/Grid/Grid';
 
-const Home = ({ isUserLogin, dataUser }) => {
+const Home = ({ isUserLogin, dataUser, setIsUserLogin }) => {
   const [itemSearch, setItemSearch] = useState('');
 
   const getSearch = (item) => {
@@ -11,7 +12,7 @@ const Home = ({ isUserLogin, dataUser }) => {
 
   return (
     <>
-      <Header getSearch={getSearch} isUserLogin={isUserLogin} dataUser={dataUser} />
+      <Header getSearch={getSearch} isUserLogin={isUserLogin} dataUser={dataUser} setIsUserLogin={setIsUserLogin} />
       <Grid itemSearch={itemSearch} />
     </>
   );

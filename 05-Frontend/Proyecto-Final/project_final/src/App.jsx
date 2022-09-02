@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Home isUserLogin={isUserLogin} dataUser={dataUser} />} />
+      <Route path="/" element={<Home isUserLogin={isUserLogin} dataUser={dataUser} setIsUserLogin={setIsUserLogin} />} />
       {!isUserLogin ? (
         <>
           <Route path="/login" element={<Login setAuthentication={setAuthentication} setIsUserLogin={setIsUserLogin} />} />
