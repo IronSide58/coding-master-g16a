@@ -298,3 +298,10 @@ hr {
 .mrg {
   padding-top: 20px;
 }
+.link-login {
+  align-items: center;
+  color: var(--darkBlue);
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
