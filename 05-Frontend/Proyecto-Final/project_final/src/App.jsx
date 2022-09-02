@@ -14,7 +14,8 @@ const App = () => {
 
   useEffect(() => {
     const userSession = localStorage.getItem('isUserLogin');
-    userSession === 'false' ? setIsUserLogin(false) : setIsUserLogin(true);
+    const status = (userSession === 'true');
+    setIsUserLogin(status);
   }, []);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
         </>
       ) : null}
-      <Route path="/details/:id" element={<Details isUserLogin={isUserLogin} dataUser={dataUser} />} />
+      <Route path="/details/:id" element={<Details isUserLogin={isUserLogin} dataUser={dataUser} setIsUserLogin={setIsUserLogin} />} />
       <Route path="*" element={<Home />} />
     </Routes>
   );

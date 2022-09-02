@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = ({ setAuthentication, setIsUserLogin }) => {
@@ -21,7 +21,8 @@ const Login = ({ setAuthentication, setIsUserLogin }) => {
             password: credentials.password,
           },
         );
-        response.status === 200 && setAuthentication(response.data); setIsUserLogin(true);
+        console.log(response);
+        if (response.status === 200) setAuthentication(response.data); setIsUserLogin(true);
         setCredentials({}); navigate('/', { replace: true });
       })();
     } catch (error) {
@@ -39,6 +40,7 @@ const Login = ({ setAuthentication, setIsUserLogin }) => {
           <label htmlFor="password">Contraseña</label>
           <input type="password" placeholder="Ingresa tu contaseña..." className="input-login" value={credentials.password} name="password" onChange={handleCredentials} />
           <input type="submit" className="btn_claim" value="Ingresar" />
+          <Link to="/signup" className="link-login">Registrarse</Link>
         </form>
       </section>
     </div>

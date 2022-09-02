@@ -1,24 +1,43 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const SignUp = () => {
   const [dataForm, setDataForm] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = ({ target: { name, value } }) => {
+    console.log(dataForm);
     setDataForm({ ...dataForm, [name]: value });
   };
 
-  const register = (event) => {
+  const register = async (event) => {
     event.preventDefault();
-    axios.post('https://ecomerce-master.herokuapp.com/api/v1/signup', {
-      first_name: dataForm.firstName,
-      last_name: dataForm.lastName,
-      birth_date: dataForm.birth_date,
-      gender: dataForm.gender,
-      email: dataForm.email,
-      password: dataForm.password,
-    });
-    setDataForm({});
+    console.log(dataForm);
+    try {
+      const response = await axios.post('https://ecomerce-master.herokuapp.com/api/v1/signup', {
+        first_name: dataForm.firstName,
+        last_name: dataForm.lastName,
+        birth_date: dataForm.birth_date,
+        gender: dataForm.gender,
+        email: dataForm.email,
+        password: dataForm.password,
+      }).catch((error) => {
+        console.log(error.response);
+        if (error.response.status === 500) {
+          alert('Usuario registrado');
+        } else if (error.response.status === 400) {
+          alert('Faltan campos por rellenar');
+        }
+      });
+      console.log(response);
+      if (response.status !== 500 || response.status !== 400) {
+        navigate('/', { replace: true });
+        setDataForm({});
+      }
+    } catch (errors) {
+      console.error('Error', errors);
+    }
   };
 
   return (
@@ -43,6 +62,7 @@ const SignUp = () => {
           <label htmlFor="password">Contraseña</label>
           <input type="password" name="password" className="input-login" value={dataForm.password} onChange={handleChange} />
           <input type="submit" className="btn_claim" value="Registrarse" />
+          <Link to="/login" className="link-login">Iniciar Sesion</Link>
         </form>
       </section>
     </div>

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../Header/Header';
 import productDefaults from '../../assets/img/product_default.png';
 
-const Details = ({ isUserLogin, dataUser }) => {
+const Details = ({ isUserLogin, dataUser, setIsUserLogin }) => {
   const [itemId, setItemId] = useState('');
   const params = useParams();
 
@@ -21,7 +21,7 @@ const Details = ({ isUserLogin, dataUser }) => {
 
   return (
     <>
-      <Header isUserLogin={isUserLogin} dataUser={dataUser} />
+      <Header isUserLogin={isUserLogin} dataUser={dataUser} setIsUserLogin={setIsUserLogin} />
       <main>
         <section className="details">
           <div className="details-image">
