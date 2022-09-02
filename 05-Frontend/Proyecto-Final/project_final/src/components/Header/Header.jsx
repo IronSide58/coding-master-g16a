@@ -45,7 +45,7 @@ const Header = ({ getSearch, isUserLogin, dataUser, setIsUserLogin }) => {
           <div className="logout">
             <div className="user-login">
               <img src={user} className="user-logo" alt="user" />
-              <h1>
+              <h1 className="title-logout">
                 {dataUser.first_name}
                 {' '}
                 {dataUser.last_name}
