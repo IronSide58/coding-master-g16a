@@ -25,6 +25,7 @@
         "linebreak-style": ["error", "windows"],
         "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
         "no-nested-ternary": "off",
+        "no-alert": "off",
         "no-console": ["error", { "allow": ["log", "error"] }],
         "no-underscore-dangle": "off",
         "no-use-before-define": ["error", {"functions": false, "variables": false}],
