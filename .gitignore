@@ -241,4 +241,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Another folder
+06-FrontendAnz
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,visualstudiocode,node
